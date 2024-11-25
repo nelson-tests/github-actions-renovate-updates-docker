@@ -13,6 +13,9 @@
   "packageRules": [
     {
       "matchManagers": ["dockerfile", "docker-compose"],
+      "semanticCommits": true,
+      "semanticCommitType": "build",
+      "semanticCommitScope": null,
       "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": false,
       "automergeStrategy": "none",
