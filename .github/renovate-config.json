@@ -1,10 +1,17 @@
 {
   "extends": ["config:base"],
   "enabledManagers": ["dockerfile", "docker-compose"],
+  "dockerfile": {
+    "enabled": true,
+    "fileMatch": ["(^|/)(Dockerfile)$"]
+  },
+  "docker-compose": {
+    "enabled": true,
+    "fileMatch": ["(^|/)(docker-compose\\.yml|docker-compose\\.[a-zA-Z0-9_-]+\\.yml)$"]
+  },
   "packageRules": [
     {
       "matchManagers": ["dockerfile"],
-      "fileMatch": ["(^|/)(Dockerfile)$"],
       "groupName": null,
       "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": false,
@@ -13,7 +20,6 @@
     },
     {
       "matchManagers": ["docker-compose"],
-      "fileMatch": ["(^|/)(docker-compose\\.yml|docker-compose\\.[a-zA-Z0-9_-]+\\.yml)$"],
       "groupName": null,
       "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": false,
