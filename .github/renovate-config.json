@@ -11,20 +11,11 @@
   },
   "packageRules": [
     {
-      "matchManagers": ["dockerfile"],
-      "groupName": null,
+      "matchManagers": ["dockerfile", "docker-compose"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": false,
       "automergeStrategy": "none",
-      "labels": ["docker-update", "requires-review"]
-    },
-    {
-      "matchManagers": ["docker-compose"],
-      "groupName": null,
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "automerge": false,
-      "automergeStrategy": "none",
-      "labels": ["docker-compose-update", "requires-review"]
+      "labels": ["requires-review"]
     }
   ]
 }
