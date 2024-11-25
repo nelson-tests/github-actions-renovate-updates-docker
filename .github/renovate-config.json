@@ -1,33 +1,21 @@
 {
   "extends": ["config:base"],
-  "managers": {
-    "dockerfile": {
-      "enabled": true,
-      "fileMatch": [
-        "(^|/)(Dockerfile)$"
-      ]
-    },
-    "docker-compose": {
-      "enabled": true,
-      "fileMatch": [
-        "(^|/)(docker-compose\\.yml|docker-compose\\.[a-zA-Z0-9_-]+\\.yml)$"
-      ]
-    }
-  },
-  "packageRules":
-  [
+  "enabledManagers": ["dockerfile", "docker-compose"],
+  "packageRules": [
     {
-      "matchDatasources": ["docker"],
+      "matchManagers": ["dockerfile"],
+      "fileMatch": ["(^|/)(Dockerfile)$"],
       "groupName": null,
-      "updateTypes": ["major", "minor", "patch"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": false,
       "automergeStrategy": "none",
       "labels": ["docker-update", "requires-review"]
     },
     {
       "matchManagers": ["docker-compose"],
+      "fileMatch": ["(^|/)(docker-compose\\.yml|docker-compose\\.[a-zA-Z0-9_-]+\\.yml)$"],
       "groupName": null,
-      "updateTypes": ["major", "minor", "patch"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": false,
       "automergeStrategy": "none",
       "labels": ["docker-compose-update", "requires-review"]
