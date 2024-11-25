@@ -1,5 +1,6 @@
 {
   "extends": ["config:recommended"],
+  "repositories": ["nelson-tests/github-actions-renovate-updates-docker"],
   "enabledManagers": ["dockerfile", "docker-compose"],
   "dockerfile": {
     "enabled": true,
