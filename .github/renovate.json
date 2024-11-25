@@ -1,6 +1,9 @@
 {
   "extends": ["config:recommended", ":dependencyDashboard", ":dependencyDashboardApproval"],
   "repositories": ["nelson-tests/github-actions-renovate-updates-docker"],
+  "semanticCommits": true,
+  "semanticCommitType": "build",
+  "semanticCommitScope": null,
   "enabledManagers": ["dockerfile", "docker-compose"],
   "dockerfile": {
     "enabled": true,
@@ -13,9 +16,6 @@
   "packageRules": [
     {
       "matchManagers": ["dockerfile", "docker-compose"],
-      "semanticCommits": true,
-      "semanticCommitType": "build",
-      "semanticCommitScope": null,
       "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": false,
       "automergeStrategy": "none",
