@@ -7,7 +7,8 @@ on:
     - cron: "0 3 * * *"
 
 jobs:
-  renovate:
+  renovate-updates:
+    name: "Renovate Updates"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

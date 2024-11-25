@@ -2,7 +2,9 @@
   "extends": ["config:base"],
   "docker": {
     "enabled": true,
-    "fileMatch": ["(^|/)(Dockerfile|docker-compose.yml)$"]
+    "fileMatch": [
+      "(^|/)(Dockerfile|docker-compose\\.yml|docker-compose\\.[a-zA-Z0-9_-]+\\.yml)$"
+    ]
   },
   "packageRules":
   [
