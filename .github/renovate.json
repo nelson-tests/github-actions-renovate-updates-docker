@@ -1,5 +1,5 @@
 {
-  "extends": ["config:recommended"],
+  "extends": ["config:recommended", ":dependencyDashboard", ":dependencyDashboardApproval"],
   "repositories": ["nelson-tests/github-actions-renovate-updates-docker"],
   "enabledManagers": ["dockerfile", "docker-compose"],
   "dockerfile": {
